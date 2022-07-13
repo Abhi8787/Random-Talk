@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/save"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/save_shape"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_check_circle_24"
+            android:layout_gravity="right" />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_margin="10dp"
+            android:id="@+id/profile"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profile"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+
+        <EditText
+            android:id="@+id/settingName"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:text="QuickChatApp"
+            android:textSize="20dp"
+            android:fontFamily="@font/spartan_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <EditText
+            android:id="@+id/settingStatus"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:text="Hey there I'm using this chat app\nWanna try this"
+            android:textSize="15dp"
+            android:fontFamily="@font/spartan_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
