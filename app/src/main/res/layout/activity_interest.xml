@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InterestActivity">
+
+
+  <LinearLayout
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:gravity="center"
+      android:background="@color/colorPrimary"
+      android:layout_height="50dp"
+      android:orientation="horizontal">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Your Interests"
+        android:fontFamily="@font/spartan_bold"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/white"/>
+
+
+
+  </LinearLayout>
+
+
+  <ProgressBar
+      android:id="@+id/progressBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="325dp"
+      android:indeterminateDrawable="@drawable/progressbar"
+      />
+
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      android:padding="4dp"
+      android:background="@color/colorPrimary"
+      app:srcCompat="@drawable/ic_check_black_24dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
+      android:backgroundTint="@color/colorPrimary"/>
+
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/interestRecycler"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/toolbar"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
+      android:padding="3dp" />
+
+
+
+</RelativeLayout>

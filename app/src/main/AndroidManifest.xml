@@ -10,6 +10,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatting">
         <activity
+            android:name=".checkProfileMatch1"
+            android:exported="false" />
+        <activity
+            android:name=".checkProfileMatch"
+            android:exported="false" />
+        <activity
+            android:name=".checkProfile"
+            android:exported="false" />
+        <activity
+            android:name=".RequestAccepted"
+            android:exported="false" />
+        <activity
+            android:name=".RequestSent"
+            android:exported="false" />
+        <activity
+            android:name=".FriendActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".MyChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".InterestActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

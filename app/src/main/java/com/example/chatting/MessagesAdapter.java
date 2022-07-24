@@ -51,6 +51,9 @@ public class MessagesAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        holder.setIsRecyclable(false);
+
          Messages messages = messagesArrayList.get(position);
 
          if(holder.getClass() == SenderViewHolder.class)

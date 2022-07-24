@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="10dp"
+    android:background="@drawable/shape_item">
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/request_background"
+            android:id="@+id/row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userImage"
+                android:layout_margin="10dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/profile"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/spartan_bold"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/userStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/spartan_regular"
+                    android:textSize="15dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/sendRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row"
+            android:background="@drawable/requestbackground1"
+            android:gravity="center"
+            android:text="Accept Request"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

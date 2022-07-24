@@ -1,6 +1,8 @@
 package com.example.chatting;
 
-public class Users {
+import java.util.ArrayList;
+
+public class Users implements  Comparable<Users>{
 
     String uid;
     String name;
@@ -11,8 +13,7 @@ public class Users {
     public Users() {
     }
 
-
-    public Users(String uid, String name, String email, String imageUri , String status) {
+    public Users(String uid, String name, String email, String imageUri, String status) {
         this.uid = uid;
         this.name = name;
         this.email = email;
@@ -58,5 +59,10 @@ public class Users {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public int compareTo(Users users) {
+        return this.name.compareTo(users.name);
     }
 }

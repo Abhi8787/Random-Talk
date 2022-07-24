@@ -4,54 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".HomeActivity">
 
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:gravity="right"
-        android:background="@color/primary_purple"
-        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="App Name"
+            android:text="Your Match"
             android:layout_weight="1"
+            android:fontFamily="@font/spartan_bold"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
-            android:textSize="16dp"
+            android:textSize="25dp"
             android:textColor="@color/white"/>
 
 
-        <ImageView
-            android:id="@+id/settings"
-            android:background="@drawable/ic_baseline_settings_24"
-            android:layout_gravity="center"
-            android:layout_width="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="30dp"/>
-
-
-
-        <ImageView
-            android:id="@+id/logout"
-            android:layout_width="25dp"
-            android:background="@drawable/off"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="10dp"/>
 
     </LinearLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:layout_marginTop="350dp"
+        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/navigationButton"
         android:layout_below="@id/toolbar"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/navigation_color"
+        app:itemTextColor="@color/navigation_color"
+        app:menu="@menu/navigation_menu"
+
+        />
+
 
 
 

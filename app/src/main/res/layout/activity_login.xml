@@ -92,7 +92,7 @@
             android:text="I'm new User. "
             android:fontFamily="@font/spartan_regular"
             android:textSize="16dp"
-            android:textColor="@color/primary_purple"/>
+            android:textColor="@color/colorPrimary"/>
 
         <TextView
             android:id="@+id/signUp"
@@ -101,7 +101,7 @@
             android:text="Sign Up"
             android:textSize="16dp"
             android:fontFamily="@font/spartan_bold"
-            android:textColor="@color/primary_purple"/>
+            android:textColor="@color/colorPrimary"/>
 
 
     </LinearLayout>

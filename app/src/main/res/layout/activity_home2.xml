@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity2">
+
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:background="@color/colorPrimary"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find Friends"
+            android:layout_weight="1"
+            android:fontFamily="@font/spartan_bold"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="25dp"
+            android:textColor="@color/white"/>
+
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/progressbar"
+        android:layout_marginTop="350dp"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navigationButton"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="3dp" />
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/navigation_color"
+        app:itemTextColor="@color/navigation_color"
+        app:menu="@menu/navigation_menu"
+
+        />
+
+
+
+
+</RelativeLayout>

@@ -8,4 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary_purple">#AF14CA</color>
+    <color name="color_blue">#416E78</color>
+    <color name="colorPrimary">#7871D6</color>
+    <color name="light">#00B8D4</color>
+    <color name="darker_text">#748A9D</color>
+    <color name="colorPrimaryDark">#7871D6</color>
+    <color name="input_text">#A6BCD0</color>
 </resources>

@@ -5,7 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -72,10 +76,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 progressDialog.show();
 
-                String t_name = name.getText().toString();
-                String t_email = email.getText().toString();
-                String t_password = password.getText().toString();
-                String t_confirm_Password = confirm_password.getText().toString();
+                String t_name = name.getText().toString().trim();
+                String t_email = email.getText().toString().trim();
+                String t_password = password.getText().toString().trim();
+                String t_confirm_Password = confirm_password.getText().toString().trim();
                 String t_status = "Hey There I'm Using This Application";
 
                 if (TextUtils.isEmpty(t_name) || TextUtils.isEmpty(t_email) || TextUtils.isEmpty(t_password)
@@ -114,13 +118,23 @@ public class RegistrationActivity extends AppCompatActivity {
                                                     @Override
                                                     public void onSuccess(Uri uri) {
                                                         imageURI = uri.toString();
-                                                        Users users = new Users(auth.getUid(), t_name, t_email, imageURI , t_status);
+                                                        Users users = new Users(auth.getUid(), t_name, t_email, imageURI , t_status );
                                                         reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
+
+
+
+                                                                    final SharedPreferences sharedPreferences = getSharedPreferences("Data" , Context.MODE_PRIVATE);
+                                                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                                    editor.putString("Email",t_email);
+                                                                    editor.putString("Password",t_password);
+                                                                    editor.commit();
+
                                                                     progressDialog.dismiss();
-                                                                    startActivity(new Intent(RegistrationActivity.this, HomeActivity.class));
+                                                                    startActivity(new Intent(RegistrationActivity.this, InterestActivity.class));
+                                                                    finish();
                                                                 } else {
                                                                     progressDialog.dismiss();
                                                                     Toast.makeText(RegistrationActivity.this, "Error in Creating a new User", Toast.LENGTH_SHORT).show();
@@ -139,7 +153,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 {
                                     String t_status = "Hey There I'm Using This Application";
                                     imageURI = "https://firebasestorage.googleapis.com/v0/b/chatting-93fb2.appspot.com/o/profile_image.png?alt=media&token=0e27a2a5-cfa5-42cd-8af2-dd87ebd0b7d2";
-                                    Users users = new Users(auth.getUid() ,t_name , t_email ,imageURI , t_status);
+                                    Users users = new Users(auth.getUid() ,t_name , t_email ,imageURI , t_status );
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>()
                                     {
                                         @Override
@@ -147,8 +161,16 @@ public class RegistrationActivity extends AppCompatActivity {
                                         {
                                             if(task.isSuccessful())
                                             {
+
+                                                final SharedPreferences sharedPreferences = getSharedPreferences("Data" , Context.MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("Email",t_email);
+                                                editor.putString("Password",t_password);
+                                                editor.commit();
+
                                                 progressDialog.dismiss();
-                                                startActivity(new Intent(RegistrationActivity.this , HomeActivity.class));
+                                                startActivity(new Intent(RegistrationActivity.this , InterestActivity.class));
+                                                finish();
                                             }
                                             else
                                             {

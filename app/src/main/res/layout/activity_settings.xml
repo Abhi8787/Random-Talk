@@ -7,30 +7,53 @@
     tools:context=".SettingsActivity">
 
 
+
+
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"/>
 
 
         <ImageView
             android:id="@+id/save"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/save_shape"
-            android:padding="5dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/ic_baseline_check_circle_24"
-            android:layout_gravity="right" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/ic_baseline_check_circle_24"
+            android:padding="5dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
 
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_margin="10dp"
             android:id="@+id/profile"
-            android:layout_gravity="center"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:src="@drawable/profile"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
@@ -38,26 +61,32 @@
 
         <EditText
             android:id="@+id/settingName"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@null"
-            android:text="QuickChatApp"
-            android:textSize="20dp"
-            android:fontFamily="@font/spartan_bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/setting_background"
+            android:fontFamily="@font/spartan_bold"
+            android:gravity="center"
+            android:text="QuickChatApp"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
 
         <EditText
             android:id="@+id/settingStatus"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@null"
-            android:text="Hey there I'm using this chat app\nWanna try this"
-            android:textSize="15dp"
-            android:fontFamily="@font/spartan_regular"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/setting_background"
+            android:fontFamily="@font/spartan_regular"
+            android:gravity="center"
+            android:text="Hey There I'm Using This Application"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
 
 
     </LinearLayout>

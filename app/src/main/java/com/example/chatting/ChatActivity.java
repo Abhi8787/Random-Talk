@@ -6,9 +6,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -54,10 +57,14 @@ public class ChatActivity extends AppCompatActivity {
 
     MessagesAdapter adapter;
 
+    Boolean flag=false;
+    ImageView list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
 
         database = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -146,6 +153,8 @@ public class ChatActivity extends AppCompatActivity {
                 }
 
                 editTextMsg.setText("");
+
+
                 Date date = new Date();
 
                 Messages msg = new Messages(message , SenderUID , date.getTime() );
@@ -165,6 +174,22 @@ public class ChatActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+
+
+
+        list = findViewById(R.id.list);
+
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(ChatActivity.this , ListActivity.class);
+                intent.putExtra("uid",getIntent().getStringExtra("uid"));
+                startActivity(intent);
+
             }
         });
 

@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -33,6 +35,8 @@ import com.google.firebase.auth.FirebaseAuth;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        final SharedPreferences sharedPreferences = getSharedPreferences("Data" , Context.MODE_PRIVATE);
+
         signUp = findViewById(R.id.signup);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -50,8 +54,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
                 progressDialog.show();
 
-                String t_email  = email.getText().toString();
-                String t_password = password.getText().toString();
+                String t_email  = email.getText().toString().trim();
+                String t_password = password.getText().toString().trim();
 
                 if(TextUtils.isEmpty(t_email) || TextUtils.isEmpty(t_password))
                 {
@@ -81,8 +85,14 @@ import com.google.firebase.auth.FirebaseAuth;
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
+
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("Email",t_email);
+                                editor.putString("Password",t_password);
+                                editor.commit();
                                 progressDialog.dismiss();
-                                startActivity(new Intent(LoginActivity.this ,HomeActivity.class));
+                                startActivity(new Intent(LoginActivity.this ,InterestActivity.class));
+                                finish();
                             }
                             else
                             {

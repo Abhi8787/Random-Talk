@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/primary_purple">
+    android:background="@color/colorPrimary">
 
 
     <LinearLayout
@@ -18,12 +18,12 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/logo_splash" />
+            android:background="@drawable/logo" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chat App"
+            android:text="Random Talk"
             android:gravity="center"
             android:textColor="@color/white"
             android:fontFamily="@font/spartan_bold"
